@@ -112,11 +112,9 @@ button {
   max-width: 15px;
 }
 
-
-
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #76CE82;
   font-size: 20px;
   height: 60px;
   width: 60px;
@@ -180,6 +178,26 @@ button {
   border-radius: 5px;
 }
 
+#overlay h3,
+.reveal {
+  font-weight: normal;
+  line-height: 0;
+  display: none;
+  text-transform: uppercase;
+}
+
+#overlay h3 {
+  line-height: 1;
+}
+
+.reveal {
+  letter-spacing: 2px;
+}
+
+.lose #btn__reset {
+  margin-top: 60px;
+}
+
 .title {
   color: #FFF;
 }
@@ -201,7 +219,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: var(--color-lose);
 }
 
 .lose a {

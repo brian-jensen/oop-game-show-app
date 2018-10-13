@@ -1,5 +1,5 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto Mono:300');
 
 /* Variables */
 
@@ -30,7 +30,9 @@ body {
   height: 100vh;
 }
 
-li, ol, ul {
+li,
+ol,
+ul {
   padding: 0;
   display: inline-block;
 }
@@ -60,9 +62,18 @@ button {
   cursor: pointer;
 }
 
+#qwerty button {
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 300;
+}
+
+#qwerty button:disabled {
+  cursor: default;
+}
+
 #btn__reset {
-	width: 200px;
-	margin: 0 auto;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -79,20 +90,17 @@ button {
   padding: 10px;
 }
 
-#phrase ul li{
+#phrase ul li {
   margin-top: 15px;
   width: 60px;
   height: 60px;
 }
-
-
 
 /* Title */
 
 .header {
   color: #3a3f58;
 }
-
 
 /* Phrase */
 
@@ -114,7 +122,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #76CE82;
+  background-color: var(--color-win);
   font-size: 20px;
   height: 60px;
   width: 60px;
@@ -124,7 +132,6 @@ button {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
 }
-
 
 /* Keyboard */
 
@@ -196,6 +203,17 @@ button {
 
 .lose #btn__reset {
   margin-top: 60px;
+}
+
+.red-button {
+  background-color: var(--color-lose);
+  outline: none;
+  box-shadow: inset 3px 2px 2px #720000;
+}
+
+.green-button {
+  background-color: var(--color-win);
+  box-shadow: inset 3px 2px 2px #35933f;
 }
 
 .title {

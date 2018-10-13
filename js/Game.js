@@ -27,13 +27,17 @@ class Game {
 
   /**
    * Checks to see if the button typed or clicked by the player matches a letter in the phrase. If the selected letter matches, call the showMatchedLetter() method on the phrase. If it does not, then call the removeLife() method and then call the checkForWin() method.
-   * @param {string} key - The letter that the user typed or clicked.
+   * @param {object} key - The '#qwerty button' element that the user typed or clicked.
+   * @param {string} text - The letter that the user typed or clicked.
    */
-  handleInteraction(key) {
-    if (phrase.checkLetter(key.toUpperCase())) {
-      phrase.showMatchedLetter(key.toUpperCase());
+  handleInteraction(key, text) {
+    key.style.transition = '';
+    if (phrase.checkLetter(text.toUpperCase())) {
+      phrase.showMatchedLetter(text.toUpperCase());
+      key.classList.add("green-button");
       this.checkForWin();
     } else {
+      key.classList.add("red-button");
       this.removeLife();
     }
   }
@@ -75,8 +79,8 @@ class Game {
       overlay.style.display = "flex";
       title.textContent = `Sorry, you ${status}!`;
       resetButton.textContent = 'Try Again';
-      phraseChars.forEach(char => missedPhrase.push(char.textContent));
       // Reveals what the phrase was if the player lost the game.
+      phraseChars.forEach(char => missedPhrase.push(char.textContent));
       reveal.innerHTML = `&sext; ${missedPhrase.join('')} &sext;`; 
       h3.style.display = "block";
       reveal.style.display = "block";

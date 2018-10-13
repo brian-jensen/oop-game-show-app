@@ -44,6 +44,7 @@ const resetDisplay = () => {
   reveal.style.display = '';
   phraseUl.innerHTML = '';
   letters.forEach(letter => {
+    letter.style.transition = "none";
     letter.removeAttribute('class');
     letter.removeAttribute('disabled');
   });
@@ -58,7 +59,7 @@ const resetDisplay = () => {
 const markButton = key => {
   key.className = 'chosen';
   key.setAttribute('disabled', true);
-  game.handleInteraction(key.textContent);
+  game.handleInteraction(key, key.textContent);
 };
 
 // When the user clicks the "Start Game" button, call resetDisplay(), create a new Game object, and start the game.
